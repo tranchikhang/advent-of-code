@@ -49,29 +49,8 @@ for ($j=0 ; $j<$maxCrate ; $j++) {
         }
     }
 }
-echo "<br>original----------------------------------------------<br>";
-print_r($crateArr[0]);
-echo "<br>";
-print_r($crateArr[1]);
-echo "<br>";
-print_r($crateArr[2]);
-echo "<br>";
-print_r($crateArr[3]);
-echo "<br>";
-print_r($crateArr[4]);
-echo "<br>";
-print_r($crateArr[5]);
-echo "<br>";
-print_r($crateArr[6]);
-echo "<br>";
-print_r($crateArr[7]);
-echo "<br>";
-echo "<br>";
 
 foreach ($operation as $o) {
-    echo "<br>-------------------------------------------------<br>";
-    print_r($o);
-    echo "<br>";
 
     for ($i=0 ; $i<$o['number'] ; $i++) {
         // move elements
@@ -81,39 +60,12 @@ foreach ($operation as $o) {
             continue;
         }
         $eleToMove = $crateArr[$from][count($crateArr[$from])-1];
-        // echo "eleToMove=" . $eleToMove;
-        // echo "<br>";
-        // add
         $crateArr[$to][] = $eleToMove;
         // remove
         unset($crateArr[$from][count($crateArr[$from])-1]);
         $crateArr[$from] = array_values($crateArr[$from]);
 
-        // echo "i=" . strval($i);
-        // echo "<br>";
-        // print_r($crateArr[$from]);
-        // echo "<br>";
-        // echo "<br>";
-
     }
-echo "<br>------------------------------------------------------<br>";
-print_r($crateArr[0]);
-echo "<br>";
-print_r($crateArr[1]);
-echo "<br>";
-print_r($crateArr[2]);
-echo "<br>";
-print_r($crateArr[3]);
-echo "<br>";
-print_r($crateArr[4]);
-echo "<br>";
-print_r($crateArr[5]);
-echo "<br>";
-print_r($crateArr[6]);
-echo "<br>";
-print_r($crateArr[7]);
-echo "<br>";
-echo "<br>";
 }
 
 

@@ -49,30 +49,8 @@ for ($j=0 ; $j<$maxCrate ; $j++) {
         }
     }
 }
-echo "<br>original-------------------------------------------------<br>";
-print_r($crateArr[0]);
-echo "<br>";
-print_r($crateArr[1]);
-echo "<br>";
-print_r($crateArr[2]);
-echo "<br>";
-print_r($crateArr[3]);
-echo "<br>";
-print_r($crateArr[4]);
-echo "<br>";
-print_r($crateArr[5]);
-echo "<br>";
-print_r($crateArr[6]);
-echo "<br>";
-print_r($crateArr[7]);
-echo "<br>";
-echo "<br>";
 
 foreach ($operation as $o) {
-    echo "<br>--------------------------------------------------<br>";
-    print_r($o);
-    echo "<br>";
-
     $temp = [];
     $from = $o['from'] - 1;
     $to = $o['to'] - 1;
@@ -90,53 +68,11 @@ foreach ($operation as $o) {
         // remove
         unset($crateArr[$from][count($crateArr[$from])-1]);
         $crateArr[$from] = array_values($crateArr[$from]);
-
-        // echo "i=" . strval($i);
-        // echo "<br>";
-        // print_r($crateArr[$from]);
-        // echo "<br>";
-        // echo "<br>";
-
     }
     $crateArr[$to] = array_merge($crateArr[$to], array_reverse($temp));
-echo "<br>------------------------------------------------------<br>";
-// print_r($crateArr[0]);
-// echo "<br>";
-// print_r($crateArr[1]);
-// echo "<br>";
-// print_r($crateArr[2]);
-// echo "<br>";
-// print_r($crateArr[3]);
-// echo "<br>";
-// print_r($crateArr[4]);
-// echo "<br>";
-// print_r($crateArr[5]);
-// echo "<br>";
-// print_r($crateArr[6]);
-// echo "<br>";
-// print_r($crateArr[7]);
-// echo "<br>";
-// echo "<br>";
+
 }
 
-echo "<br>final-------------------------------------------------<br>";
-print_r($crateArr[0]);
-echo "<br>";
-print_r($crateArr[1]);
-echo "<br>";
-print_r($crateArr[2]);
-echo "<br>";
-print_r($crateArr[3]);
-echo "<br>";
-print_r($crateArr[4]);
-echo "<br>";
-print_r($crateArr[5]);
-echo "<br>";
-print_r($crateArr[6]);
-echo "<br>";
-print_r($crateArr[7]);
-echo "<br>";
-echo "<br>";
 
 
 // loop through each crate, total 9 crates
