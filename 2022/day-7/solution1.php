@@ -1,5 +1,6 @@
 <?php
 
+$ls = true;
 $currentPath = '/';
 $pathValMap= [];
 
@@ -13,10 +14,8 @@ if ($file = fopen("input.txt", "r")) {
             if ($arr[1]=='cd') {
                 // cd logic
                 if ($arr[2] == '/') {
-                    // 
+                    // move to root, do nothing
                 } elseif ($arr[2] == "..") {
-                    $level--;
-
                     // current size
                     $c = $pathValMap[$currentPath];
                     //go up
@@ -43,9 +42,7 @@ if ($file = fopen("input.txt", "r")) {
         } elseif ($ls) {
             // read list from ls
             $arr = explode(' ', $line);
-            if ($arr[0]=='dir') {
-                // add directory
-            } else {
+            if ($arr[0]!='dir') {
                 // add file
                 // add value
                 if (array_key_exists($currentPath, $pathValMap)) {
@@ -58,16 +55,6 @@ if ($file = fopen("input.txt", "r")) {
     }
     fclose($file);
 }
-
-
-
-
-
-// print_r($pointer);
-echo '<br>************<br><pre>';
-print_r($pathValMap);
-echo '</pre><br>************<br>';
-
 
 $total = 0;
 foreach ($pathValMap as $key => $value) {
